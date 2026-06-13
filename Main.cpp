@@ -20,7 +20,7 @@ int main() {
     simBox.exportToCSV("trajectory.csv", 0);
     simBox.exportMetrics("metrics.csv", 0, engine.getCurrentTime());
 
-    // Cranked up to 2 Million Steps for macroscopic SEI growth
+    // Incresed to 2 Million Steps for macroscopic SEI growth
     int totalSteps = 2000000; 
     std::cout << "\nStarting KMC FRM Loop (" << totalSteps << " steps)..." << std::endl;
     std::cout << "This may take a minute or two. Let the CPU work!" << std::endl;
