@@ -111,7 +111,7 @@ void SimulationBox::initializeElectrolyte(double saltMolarity, double solvMolari
               << solvAdded << " FSDEE molecules." << std::endl;
 }
 
-// 4. Update your printGridStats() to include the new molecules
+// 4. Updated printGridStats() to include the new molecules
 void SimulationBox::printGridStats() const {
     int liCount = 0, vacCount = 0, saltCount = 0, solvCount = 0;
     
