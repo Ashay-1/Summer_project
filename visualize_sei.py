@@ -42,7 +42,6 @@ def plot_simulation_frame(csv_file, target_step):
     ax.set_ylabel('Y Coordinate (Å)')
     ax.set_zlabel('Z Coordinate (Å)')
     
-    # Remove the background grid for a cleaner "computational chemistry" look
     ax.grid(False)
     
 
