@@ -28,7 +28,7 @@ int main() {
     for (int step = 1; step <= totalSteps; ++step) {
         engine.executeFRMStep();
         
-        // Export metrics continuously but less frequently to keep file size manageable
+        // Exports metrics continuously but less frequently to keep file size manageable
         if (step % 5000 == 0) {
             simBox.exportMetrics("metrics.csv", step, engine.getCurrentTime());
         }
