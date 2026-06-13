@@ -56,7 +56,7 @@ public:
                     
                     const LatticeSite& targetSite = grid[j];
                     
-                    // --- THIS IS WHERE YOUR SNIPPET GOES ---
+                    // --- THIS IS WHERE SNIPPET GOES ---
                     // We only care if the target site is a Vacancy (for diffusion) 
                     // OR Lithium Metal (for reduction).
                     if (targetSite.currentSpecies == Species::Vacancy || targetSite.currentSpecies == Species::Li_Metal) {
