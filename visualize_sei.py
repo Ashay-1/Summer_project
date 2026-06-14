@@ -52,5 +52,5 @@ def plot_simulation_frame(csv_file, target_step):
     plt.show()
 
 if __name__ == "__main__":
-    # Point this to your generated file and select the final step (100)
-    plot_simulation_frame('trajectory.csv', target_step=150)
+    #To generated file and select the final step
+    plot_simulation_frame('trajectory.csv', target_step=2000000)
