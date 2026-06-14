@@ -52,5 +52,8 @@ def plot_simulation_frame(csv_file, target_step):
     plt.show()
 
 if __name__ == "__main__":
-    #To generated file and select the final step
-    plot_simulation_frame('trajectory.csv', target_step=2000000)
+    
+    temp_df = pd.read_csv('trajectory.csv', nrows=0)
+    print("Exact CSV Headers found:", temp_df.columns.tolist())
+    
+    plot_simulation_frame('trajectory.csv', target_step=1000)
