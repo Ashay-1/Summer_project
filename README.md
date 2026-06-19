@@ -1,71 +1,135 @@
 # Summer_project
 
-This repository contains C++ source code for a lattice-based kinetic Monte Carlo (KMC) simulation plus Python scripts for plotting and visualizing results.
+A lattice-based kinetic Monte Carlo (KMC) simulation with Python visualization tools for analyzing materials science phenomena.
 
-Files of note
-- C++ sources and headers
-  - Main.cpp — program entry point
-  - Lattice.cpp, Lattice.hpp — lattice implementation
-  - KMCEngine.hpp, Kinetics.hpp, Physics.hpp — KMC engine and physics/kinetics headers
-  - sei_simulation — prebuilt executable (if present)
+## Overview
 
-- Data and analysis
-  - metrics.csv, trajectory.csv — example output data (if present)
-  - plot_efficiency.py, plot_metrics.py, visualize_sei.py — Python scripts to plot/visualize results
-  - tempCodeRunnerFile.py — temporary/script file
+This repository contains:
+- **C++ implementation** of a KMC simulation engine for lattice-based modeling
+- **Python analysis tools** for data visualization and result processing
+- **Complete documentation** and build infrastructure
 
-Quickstart — build (Linux / macOS)
-1. Install a C++ compiler that supports C++17 (g++ or clang++).
-2. From the repository root, compile the project with:
+## Quick Start
 
-```sh
-# Compile Main.cpp and Lattice.cpp into an executable named sei_simulation
-g++ -std=c++17 -O2 Main.cpp Lattice.cpp -o sei_simulation
+### Prerequisites
+- C++17 compatible compiler (g++ or clang++)
+- Python 3.6+
+- pip or conda for Python package management
+
+### Build & Run (Linux/macOS)
+
+**Option 1: Using the build script**
+```bash
+chmod +x build.sh
+./build.sh
+./sei_simulation
 ```
 
-3. If the repository already contains a compiled `sei_simulation` file you can run that directly (remove execute bit if necessary):
-
-```sh
-# Make sure the executable is runnable, then run
+**Option 2: Manual compilation**
+```bash
+g++ -std=c++17 -O2 Main.cpp Lattice.cpp -o sei_simulation
 chmod +x sei_simulation
 ./sei_simulation
 ```
 
-Notes on running
-- The exact command-line options for the C++ program are not documented here. If Main.cpp parses command-line arguments, open `Main.cpp` to see expected flags/inputs.
-- Running the simulation typically produces CSV output files (for example `metrics.csv` and `trajectory.csv`) in the repository root — the included Python scripts use CSV output to create plots.
+### Python Visualization
 
-Python visualization
-1. Install Python 3 and required packages. At minimum install numpy, pandas and matplotlib:
-
-```sh
-pip install numpy pandas matplotlib
+Install Python dependencies:
+```bash
+pip install -r requirements.txt
 ```
 
-2. Run the plotting/visualization scripts (they will likely read `metrics.csv` or `trajectory.csv`):
-
-```sh
+Run visualization scripts:
+```bash
 python plot_metrics.py
 python plot_efficiency.py
 python visualize_sei.py
 ```
 
-If a script requires command-line arguments, open the script to see the usage and pass appropriate filenames.
+## Project Structure
 
-Repository structure
-- Main.cpp — main program
-- Lattice.cpp, Lattice.hpp — lattice implementation
-- KMCEngine.hpp, Kinetics.hpp, Physics.hpp — KMC engine and supporting headers
-- sei_simulation — optional prebuilt executable
-- *.py — plotting/visualization scripts
-- *.csv — example output data
+```
+Summer_project/
+├── Main.cpp                    # Program entry point
+├── Lattice.cpp                 # Lattice implementation
+├── Lattice.hpp                 # Lattice header
+├── KMCEngine.hpp               # KMC engine interface
+├── Kinetics.hpp                # Kinetics calculations
+├── Physics.hpp                 # Physics models
+├── sei_simulation              # Compiled executable (optional)
+├── plot_metrics.py             # Metrics visualization
+├── plot_efficiency.py          # Efficiency analysis
+├── visualize_sei.py            # SEI visualization
+├── metrics.csv                 # Sample output data
+├── trajectory.csv              # Sample trajectory data
+├── build.sh                    # Build script
+├── requirements.txt            # Python dependencies
+├── LICENSE                     # MIT License
+├── README.md                   # This file
+├── CONTRIBUTING.md             # Contribution guidelines
+└── .github/workflows/
+    └── ci.yml                  # GitHub Actions CI/CD
+```
 
-Contributing
-- Please open issues or pull requests if you want to add build scripts, CI, more documentation, or a requirements file for Python dependencies.
+## Features
 
-License
-- No license specified. If you want this repository to be open-source, add a LICENSE file (for example MIT or Apache-2.0).
+- **Efficient KMC simulation** on lattice structures
+- **Flexible physics engine** for materials science applications
+- **CSV data export** for analysis
+- **Python-based visualization** with matplotlib
+- **Cross-platform support** (Linux, macOS, Windows with WSL)
+- **Automated CI/CD** with GitHub Actions
 
-Contact
-- Repository owner: @Ashay-1
+## Language Composition
 
+- **C++** (79.7%) - Core simulation engine
+- **Python** (20.3%) - Analysis and visualization tools
+
+## Documentation
+
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guidelines and code style
+- [Build Script](build.sh) - Automated compilation
+- [CI/CD Pipeline](.github/workflows/ci.yml) - Continuous integration setup
+
+## Common Issues & Solutions
+
+### Build fails with "g++ not found"
+Install a C++ compiler:
+- **Ubuntu/Debian**: `sudo apt-get install build-essential`
+- **macOS**: `brew install gcc`
+- **Windows**: Use WSL or install MinGW
+
+### Python scripts can't find CSV files
+Ensure you've run the simulation first:
+```bash
+./sei_simulation
+```
+This generates `metrics.csv` and `trajectory.csv` in the current directory.
+
+### Import errors in Python scripts
+Install missing packages:
+```bash
+pip install -r requirements.txt
+```
+
+## Contributing
+
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
+- Setting up your development environment
+- Code style and standards
+- Testing requirements
+- Submitting pull requests
+
+## License
+
+This project is licensed under the **MIT License** - see [LICENSE](LICENSE) for details.
+
+## Contact
+
+**Repository Owner**: @Ashay-1
+
+For questions, issues, or suggestions, please open a GitHub issue or contact the repository owner.
+
+---
+
+**Last Updated**: 2026-06-19
